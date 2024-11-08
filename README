@@ -1,3 +1,5 @@
+Small client to send sensor data as a JSON provided by a Environment Sensor HAT connected to a Raspberry Pi Zero W to a designated URI.
+
 Needed env variables:
     - 'BASE_URL' - base url of the server to post to
     - 'INTERVAL' - interval in seconds between each post
