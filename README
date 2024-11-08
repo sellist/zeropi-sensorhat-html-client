@@ -10,7 +10,7 @@ Needed dependencies:
     - i2c-tools
 
 Config:
-    - Either placing the args in the .env, setting them as env variables, or passing them as args should work.
+    - Either placing the args in the .env, setting them as env variables, or passing them as args will work. Order of precedence is 1. program arguments, 2. system variables, 3. .env file.
 
 To run:
     Download package, run setup.sh on first run or update, run main.py in a new process
