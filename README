@@ -1,0 +1,14 @@
+Needed env variables:
+    - 'BASE_URL' - base url of the server to post to
+    - 'INTERVAL' - interval in seconds between each post
+
+Needed dependencies:
+    - python3-smbus
+    - python3-pil
+    - i2c-tools
+
+Config:
+    - Either placing the args in the .env, setting them as env variables, or passing them as args should work.
+
+To run:
+    Download package, run setup.sh on first run or update, run main.py in a new process
