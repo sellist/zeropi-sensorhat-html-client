@@ -1,11 +1,15 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
+import logging
+
 import smbus
+
+from drivers import *
+
+logger = logging.getLogger(__name__)
 
 __all__ = ['get_pressure', 'get_temperature', 'get_humidity', 'get_light', 'get_uv', 'get_gas', 'get_roll', 'get_pitch',
            'get_yaw', 'get_acceleration', 'get_gyroscope', 'get_magnetic']
-
-from drivers import *
 
 MPU_VAL_WIA = 0x71
 MPU_ADD_WIA = 0x75

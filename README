@@ -3,14 +3,16 @@ Small client to send sensor data as a JSON provided by a Environment Sensor HAT 
 Needed env variables:
     - 'BASE_URL' - base url of the server to post to
     - 'INTERVAL' - interval in seconds between each post
+    - 'SENSOR_ID' - name of the sensor to include in http post
 
 Needed dependencies:
     - python3-smbus
     - python3-pil
     - i2c-tools
+    - python3-pip
 
 Config:
     - Either placing the args in the .env, setting them as env variables, or passing them as args will work. Order of precedence is 1. program arguments, 2. system variables, 3. .env file.
 
 To run:
-    Download package, run setup.sh on first run or update, run main.py in a new process
+    Download package, set needed env variables, run run.sh on first run or update, or run main.py in a new process

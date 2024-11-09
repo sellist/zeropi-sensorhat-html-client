@@ -1,4 +1,5 @@
 import argparse
+import logging.config
 import os
 import time
 
@@ -7,6 +8,9 @@ from dotenv import load_dotenv
 
 from service import data
 
+log = logging.getLogger(__name__)
+logging.config.fileConfig('config/logging.conf')
+
 
 def send_json_to_server(data: str):
     url = os.getenv("BASE_URL")
@@ -14,6 +18,7 @@ def send_json_to_server(data: str):
         raise ValueError("BASE_URL is not set")
 
     requests.post(os.getenv("BASE_URL"), data=data)
+    log.info("Data sent to server")
 
 
 def get_interval() -> float:
