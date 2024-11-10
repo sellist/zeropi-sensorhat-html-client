@@ -8,9 +8,6 @@ from dotenv import load_dotenv
 
 from service import data
 
-log = logging.getLogger(__name__)
-logging.config.fileConfig('config/logging.conf')
-
 
 def send_json_to_server(data: str):
     url = os.getenv("BASE_URL")
@@ -51,11 +48,17 @@ def handle_arguments():
 
 
 def main():
+    logging.config.fileConfig('config/logging.conf')
+    log = logging.getLogger(__name__)
+    log.info("Starting sensor data client.")
     load_dotenv()
+    log.info("Starting sensor data client..")
     handle_arguments()
+    log.info("Starting sensor data client...")
     interval = get_interval()
 
     while True:
+        log.info("Sending sensor data to server...")
         data.build_sensor_json()
         send_json_to_server(data.build_sensor_json())
         time.sleep(interval)
@@ -65,5 +68,5 @@ if __name__ == '__main__':
     try:
         main()
     except KeyboardInterrupt:
-        print("Exiting...")
+        log.info("Exiting...")
         exit(0)

@@ -4,7 +4,7 @@ import os
 import time
 import uuid
 
-import service as sensor
+import service.sensor as sensor
 
 log = logging.getLogger(__name__)
 
